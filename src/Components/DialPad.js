@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import Key from './Key';
 import classes from './DialPad.module.css';
 
-const DialPad = () => {
+const DialPad = props => {
   const [selected, setSelected] = useState();
 
   const handleSelect = e => {
     setSelected(e.target.id);
+    props.onSelect(e);
   };
   return (
     <div className={classes.dialPad}>
