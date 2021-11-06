@@ -6,6 +6,7 @@ import DialPad from './Components/DialPad';
 function App() {
   const [amount, setAmount] = useState('');
   const [result, setResult] = useState([]);
+  const [submited, setSubmited] = useState(false);
 
   const handleSelect = e => {
     setAmount(prev => {
@@ -15,7 +16,7 @@ function App() {
 
   const handleDelete = e => {
     setAmount(prev => {
-      return prev === '0' ? `${e.target.id}` : `${prev}${e.target.id}`;
+      prev.slice(0, -1);
     });
   };
 
@@ -31,16 +32,29 @@ function App() {
     });
 
     setResult(resultArray);
+    setSubmited(true);
   };
 
   return (
     <div className='App'>
-      <input type='number' value={amount}></input>
-      <DialPad onSelect={handleSelect} onDelete={handleDelete} />
-      <Button onClick={calculateCoins} type='submit'>
-        Submit
-      </Button>
-      <div>{result}</div>
+      {!submited && (
+        <>
+          <p>Select amount</p>
+          <input type='number' value={amount}></input>
+          <DialPad onSelect={handleSelect} onDelete={handleDelete} />
+          <Button onClick={calculateCoins} type='submit'>
+            Submit
+          </Button>
+        </>
+      )}
+      {submited && (
+        <>
+          <p>Depositing</p>
+          <div>${amount}</div>
+
+          {result}
+        </>
+      )}
     </div>
   );
 }
