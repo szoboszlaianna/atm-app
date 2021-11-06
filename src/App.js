@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import Button from './Components/Button';
 import DialPad from './Components/DialPad';
+import NumberField from './Components/NumberField';
+import Title from './Components/Title';
 
 function App() {
   const [amount, setAmount] = useState('');
@@ -39,8 +41,8 @@ function App() {
     <div className='App'>
       {!submited && (
         <>
-          <p>Select amount</p>
-          <input type='number' value={amount}></input>
+          <Title>Select amount</Title>
+          <NumberField type='text' value={amount}></NumberField>
           <DialPad onSelect={handleSelect} onDelete={handleDelete} />
           <Button onClick={calculateCoins} type='submit'>
             Submit
@@ -49,10 +51,9 @@ function App() {
       )}
       {submited && (
         <>
-          <p>Depositing</p>
-          <div>${amount}</div>
-
-          {result}
+          <Title>Depositing</Title>
+          <NumberField type='text' value={amount} disabled='true'></NumberField>
+          <div>{result}</div>
         </>
       )}
     </div>

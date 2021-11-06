@@ -1,0 +1,12 @@
+.NumberField,
+.NumberField:active,
+.NumberField:hover,
+.NumberField:focus,
+.NumberField:focus-visible {
+  font-size: 40px;
+  color: white;
+  font-style: bold;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+}
