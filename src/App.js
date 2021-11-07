@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Button from './Components/Button';
+import CoinDisplay from './Components/CoinDisplay';
 import DialPad from './Components/DialPad';
 import NumberField from './Components/NumberField';
 import Title from './Components/Title';
@@ -22,15 +23,61 @@ function App() {
     });
   };
 
-  const coins = [1000, 500, 200, 100, 50, 20, 10, 5, 2, 1];
+  const coins = [
+    {
+      value: 1000,
+      type: 'note',
+    },
+    {
+      value: 500,
+      type: 'note',
+    },
+    {
+      value: 200,
+      type: 'note',
+    },
+    {
+      value: 100,
+      type: 'note',
+    },
+    {
+      value: 50,
+      type: 'note',
+    },
+    {
+      value: 20,
+      type: 'coin',
+      diameter: 40,
+    },
+    {
+      value: 10,
+      type: 'coin',
+      diameter: 20,
+    },
+    {
+      value: 5,
+      type: 'coin',
+      diameter: 50,
+    },
+    {
+      value: 2,
+      type: 'coin',
+      diameter: 30,
+    },
+    {
+      value: 1,
+      type: 'coin',
+      diameter: 10,
+    },
+  ];
 
   const calculateCoins = () => {
     var resultArray = [];
     var total = amount;
 
     coins.map(c => {
-      resultArray.push(Math.floor(total / c));
-      total = total % c;
+      resultArray.push(Math.floor(total / c.value));
+      total = total % c.value;
     });
 
     setResult(resultArray);
@@ -53,7 +100,7 @@ function App() {
         <>
           <Title>Depositing</Title>
           <NumberField type='text' value={amount} disabled='true'></NumberField>
-          <div>{result}</div>
+          <CoinDisplay result={result} coins={coins} />
         </>
       )}
     </div>

@@ -1,0 +1,12 @@
+.coin {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 20px;
+  color: white;
+  border: 1px solid white;
+  width: 30%;
+  padding: 20px;
+  margin: 20px;
+  flex: 1;
+}
