@@ -2,11 +2,14 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  font-size: 40px;
+  font-size: 20px;
   color: white;
   border: 1px solid white;
-  width: 30%;
-  padding: 20px;
-  margin: 20px;
   flex: 1;
+  width: 200px;
+  padding: 10px;
+}
+
+.img {
+  height: 50px;
 }

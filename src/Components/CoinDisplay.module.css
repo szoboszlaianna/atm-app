@@ -1,6 +1,12 @@
 .container {
   display: flex;
   width: 80%;
-  flex-wrap: wrap;
   margin: auto;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
 }

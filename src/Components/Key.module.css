@@ -3,16 +3,9 @@
   border-radius: 100%;
   font-size: 40px;
   color: white;
-  height: 40px;
-  width: 40px;
+  height: 60px;
+  width: 60px;
   margin: 5px;
   padding: 0px;
   background-color: transparent;
-}
-
-.key:active,
-.key:focus {
-  color: #2bbed3;
-  margin: 5px;
-  background-color: white;
 }

@@ -27,22 +27,27 @@ function App() {
     {
       value: 1000,
       type: 'note',
+      diameter: 0,
     },
     {
       value: 500,
       type: 'note',
+      diameter: 0,
     },
     {
       value: 200,
       type: 'note',
+      diameter: 0,
     },
     {
       value: 100,
       type: 'note',
+      diameter: 0,
     },
     {
       value: 50,
       type: 'note',
+      diameter: 0,
     },
     {
       value: 20,
