@@ -3,7 +3,7 @@
 .NumberField:hover,
 .NumberField:focus,
 .NumberField:focus-visible {
-  font-size: 40px;
+  font-size: 80px;
   color: white;
   font-style: bold;
   border: none;
