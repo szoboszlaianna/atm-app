@@ -104,7 +104,7 @@ function App() {
       {!submited && (
         <>
           <Title>Select amount</Title>
-          <NumberField type='text' value={amount}></NumberField>
+          <NumberField type='text' value={amount > 0 ? `£${amount}` : '£'}></NumberField>
           <DialPad onSelect={handleSelect} onDelete={handleDelete} />
           <Button onClick={calculateCoins} type='submit'>
             Submit
@@ -114,8 +114,9 @@ function App() {
       {submited && (
         <>
           <Title>Depositing</Title>
-          <NumberField type='text' value={amount} disabled='true'></NumberField>
+          <NumberField type='text' value={`£${amount}`} disabled='true'></NumberField>
           <CoinDisplay result={result} coins={coins} />
+          <Title>Thank you for using Enalyzer ATM</Title>
         </>
       )}
     </div>
