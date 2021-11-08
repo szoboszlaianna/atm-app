@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
 import Button from './Components/Button';
-import CoinDisplay from './Components/CoinDisplay';
 import DialPad from './Components/DialPad';
 import NumberField from './Components/NumberField';
 import Title from './Components/Title';
+import AtmScreen from './Screens/AtmScreen';
+import DepositingScreen from './Screens/DepositingScreen';
 
 function App() {
   const [amount, setAmount] = useState('');
@@ -101,24 +102,8 @@ function App() {
 
   return (
     <div className='App'>
-      {!submited && (
-        <>
-          <Title>Select amount</Title>
-          <NumberField type='text' value={amount > 0 ? `£${amount}` : '£'}></NumberField>
-          <DialPad onSelect={handleSelect} onDelete={handleDelete} />
-          <Button onClick={calculateCoins} type='submit'>
-            Submit
-          </Button>
-        </>
-      )}
-      {submited && (
-        <>
-          <Title>Depositing</Title>
-          <NumberField type='text' value={`£${amount}`} disabled='true'></NumberField>
-          <CoinDisplay result={result} coins={coins} />
-          <Title>Thank you for using Enalyzer ATM</Title>
-        </>
-      )}
+      {!submited && <AtmScreen amount={amount} onSelect={handleSelect} onDelete={handleDelete} onClick={calculateCoins} />}
+      {submited && <DepositingScreen header='Depositing' footer='Thank you for choosing Enalyzer ATM' result={result} coins={coins} amount={amount} />}
     </div>
   );
 }
