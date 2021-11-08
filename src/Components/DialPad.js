@@ -7,7 +7,6 @@ const DialPad = props => {
     if (e.target.id === 'back') {
       props.onDelete(e);
     } else {
-      console.log('select');
       props.onSelect(e);
     }
   };

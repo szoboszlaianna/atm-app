@@ -19,7 +19,7 @@ function App() {
 
   const handleDelete = e => {
     setAmount(prev => {
-      prev.slice(0, -1);
+      return prev.slice(0, -1);
     });
   };
 
