@@ -47,7 +47,7 @@ const DialPad = props => {
       </div>
       <div className={classes.row}>
         <Key id='back' onClick={handleSelect}>
-          <img src='./back_arrow.png' alt='arrow' height='30px' id='back'></img>
+          <img src='./back_arrow.png' alt='arrow' height='100%' id='back'></img>
         </Key>
         <Key id='0' onClick={handleSelect}>
           0

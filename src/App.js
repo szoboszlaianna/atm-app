@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
-import Button from './Components/Button';
-import DialPad from './Components/DialPad';
-import NumberField from './Components/NumberField';
-import Title from './Components/Title';
+import classes from './App.module.css';
 import AtmScreen from './Screens/AtmScreen';
 import DepositingScreen from './Screens/DepositingScreen';
 
@@ -100,10 +96,15 @@ function App() {
     setSubmited(true);
   };
 
+  const handleReturn = () => {
+    setSubmited(false);
+    setAmount('');
+  };
+
   return (
-    <div className='App'>
-      {!submited && <AtmScreen amount={amount} onSelect={handleSelect} onDelete={handleDelete} onClick={calculateCoins} />}
-      {submited && <DepositingScreen header='Depositing' footer='Thank you for choosing Enalyzer ATM' result={result} coins={coins} amount={amount} />}
+    <div className={classes.App}>
+      {!submited && <AtmScreen title='Select amount' amount={amount} onSelect={handleSelect} onDelete={handleDelete} onClick={calculateCoins} />}
+      {submited && <DepositingScreen header='Depositing' footer='Thank you for choosing Enalyzer ATM' result={result} coins={coins} amount={amount} onReturn={handleReturn} />}
     </div>
   );
 }
