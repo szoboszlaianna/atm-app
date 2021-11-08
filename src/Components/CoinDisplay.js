@@ -20,17 +20,17 @@ const CoinDisplay = props => {
     <div className={classes.container}>
       <div className={classes.column}>
         {bills.map(bill => (
-          <Coin key={bill.value} amount={1} value={bill.value} />
+          <Coin key={bill.value} amount={props.result[bill.id]} value={bill.value} />
         ))}
       </div>
       <div className={classes.column}>
         {bigger_coins.map(coin => (
-          <Coin key={coin.value} amount={1} value={coin.value} />
+          <Coin key={coin.value} amount={props.result[coin.id]} value={coin.value} />
         ))}
       </div>
       <div className={classes.column}>
         {smaller_coins.map(coin => (
-          <Coin key={coin.value} amount={1} value={coin.value} />
+          <Coin key={coin.value} amount={props.result[coin.id]} value={coin.value} />
         ))}
       </div>
     </div>
