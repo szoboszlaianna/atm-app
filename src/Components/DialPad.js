@@ -10,6 +10,7 @@ const DialPad = props => {
       props.onSelect(e);
     }
   };
+
   return (
     <div className={classes.dialPad}>
       <div className={classes.row}>

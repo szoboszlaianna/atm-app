@@ -20,7 +20,7 @@ const DepositingScreen = props => {
         <div className={classes.emptyContainer}></div>
       </div>
       <NumberField type='text' value={`£${props.amount}`} disabled='true'></NumberField>
-      <CoinDisplay result={props.result} coins={props.coins} />
+      <CoinDisplay className={classes.coinDisplay} result={props.result} coins={props.coins} />
       <Title>{props.footer}</Title>
     </>
   );

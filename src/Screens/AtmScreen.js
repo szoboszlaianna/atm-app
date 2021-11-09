@@ -8,7 +8,7 @@ const AtmScreen = props => {
   return (
     <>
       <Title>{props.title}</Title>
-      <NumberField type='text' value={props.amount > 0 ? `£${props.amount}` : '£'}></NumberField>
+      <NumberField type='text' value={props.amount > 0 ? `£${props.amount}` : '£'} onChange={props.onInputChange}></NumberField>
       <DialPad onSelect={props.onSelect} onDelete={props.onDelete} />
       <Button onClick={props.onClick} type='submit'>
         Submit

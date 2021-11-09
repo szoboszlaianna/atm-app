@@ -15,3 +15,7 @@
 .emptyContainer {
   flex: 1;
 }
+
+.coinDisplay {
+  padding: 10px 0px;
+}

@@ -101,9 +101,13 @@ function App() {
     setAmount('');
   };
 
+  const handleInputChange = e => {
+    setAmount(e.target.value);
+  };
+
   return (
     <div className={classes.App}>
-      {!submited && <AtmScreen title='Select amount' amount={amount} onSelect={handleSelect} onDelete={handleDelete} onClick={calculateCoins} />}
+      {!submited && <AtmScreen title='Select amount' amount={amount} onSelect={handleSelect} onDelete={handleDelete} onClick={calculateCoins} onInputChange={handleInputChange} />}
       {submited && <DepositingScreen header='Depositing' footer='Thank you for choosing Enalyzer ATM' result={result} coins={coins} amount={amount} onReturn={handleReturn} />}
     </div>
   );
