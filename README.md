@@ -4,7 +4,6 @@ Skipped part: I haven't done unit testing before, therefore I skipped a few unit
 
 ## Available Scripts
 
-In the project directory, you can run:
 
 To run the project first run:
 
@@ -14,7 +13,8 @@ and then
 
 ### `npm start`
 
-Runs the app in the development mode.\
+inside the project folder.
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `npm test -a`
