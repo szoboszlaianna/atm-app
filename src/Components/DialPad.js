@@ -12,7 +12,7 @@ const DialPad = props => {
   };
 
   return (
-    <div className={classes.dialPad}>
+    <div className={`${classes.dialPad} ${props.className}`}>
       <div className={classes.row}>
         <Key id='1' onClick={handleSelect}>
           1
