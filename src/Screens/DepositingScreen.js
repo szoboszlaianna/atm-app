@@ -15,7 +15,7 @@ const DepositingScreen = props => {
           </Key>
         </div>
         <div className={classes.titleContainer}>
-          <Title className={classes.header}>{props.header}</Title>
+          <Title>{props.header}</Title>
         </div>
         <div className={classes.emptyContainer}></div>
       </div>
