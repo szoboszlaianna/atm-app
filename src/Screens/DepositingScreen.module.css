@@ -1,2 +1,17 @@
 .header {
+  display: flex;
+  align-items: center;
+}
+
+.returnContainer {
+  flex: 1;
+  padding-top: 15px;
+}
+
+.titleContainer {
+  flex: 8;
+}
+
+.emptyContainer {
+  flex: 1;
 }
